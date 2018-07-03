@@ -1,0 +1,308 @@
+---
+title: "An R package for international cricket data"
+author: Sayani Gupta
+date: "July 2018"
+output:
+  xaringan::moon_reader:
+    css: ["default","rladies","rladies-fonts"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  collapse = TRUE,
+  echo = TRUE,
+  comment = "",
+  fig.height = 3,
+  fig.width = 7,
+  fig.align = "center",
+  cache = TRUE
+)
+
+library(xaringan)
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(magrittr)
+library(cricketdata)
+          library(kableExtra)
+library(bindrcpp)
+
+theme_set(theme_light(base_size = 23))
+```
+
+##Invented in England in the 13th century but gained popularity in 17th century
+
+
+```{r History-Cricket,echo=FALSE,fig.width = 7,fig.cap="A 1779 cricket match played by the Countess of Derby and other ladies"}
+knitr::include_graphics("Figs/Women_Cricket.png")
+```
+
+
+
+---
+
+# Fun Fact #1
+
+```{r Old_Way,echo=FALSE,fig.width = 4,fig.cap="Underarm Bowling"}
+knitr::include_graphics("Figs/oldway.png")
+```
+
+---
+
+```{r New_Way,echo=FALSE,fig.width = 4,fig.cap="Roundarm Bowling"}
+knitr::include_graphics("Figs/newway.png")
+```
+
+### Pioneered by a woman in the early 19th century to avoid entangling the skirt
+
+---
+
+class: left,middle
+
+# Quick Facts
+
+
+- Involves two teams with 11 players on each side
+
+
+- The objective is to score the more runs than the opponent
+
+
+- Key Players are *Batsman*, *Bowler* and *Fielder*
+
+---
+
+#Cricket Field Guide
+
+```{r Cricket_Field, echo=FALSE, out.width = '100%'}
+knitr::include_graphics("Figs/Cricket.png")
+```
+---
+
+class: left,middle
+
+
+# Quick Facts
+
+###Played in many formats
+
+- *TEST* : played over 5 days 
+
+- *ODI* :  50 overs per side
+
+- *T20* : 20 overs per side
+
+---
+
+                  
+```{r World_Map,echo=FALSE,fig.cap="Top Cricket Crazy Nations",fig.width=8,fig.height=3.5,dpi=300,out.width="1920px",out.height="600px"}
+knitr::include_graphics("Figs/WM.png")
+```
+---
+
+
+####Structure of [ESPNcricinfo](http://www.espncricinfo.com/) - One of the few Sophisticated takes on International Cricket Performance
+
+- _**StatsGuru**_ a database of historical matches and players from the 18th century to the present
+
+```{r Espn_Cricinfo6,echo=FALSE,fig.cap="ESPNcricinfo Tour",fig.out="100%"}
+
+knitr::include_graphics('Figs/espn.gif')
+                        
+```
+
+
+
+---
+
+```{r Structure_ESPN,echo=FALSE}
+Batsman=c("Total Runs Scored", "Number of Balls Faced","Number of Fours and Sixes", "Strike Rate, Opposition", "Position", "Dismissal", "Innings", "Ground", "Date of the Match")
+Bowler = c("Number of Overs Bowled", "Number of Maiden Overs", "Number of Runs given", "Number of Wickets", "Position", "Innings", "Oppsition", "Ground","Date of the Match")
+Fielder = c("Number of Dismissals", "Number of Catches", "Number of Stumped", "Number of Wicket Keeper Catches","Innings", "Oppsition", "Ground", "Date of the Match", "")
+knitr::kable(cbind(Batsman,Bowler,Fielder),align = "c")%>%kable_styling(c("striped"), full_width = TRUE,font= 12 )
+```
+
+####Change this slide
+---
+
+class: center,middle
+
+#Challenges??
+
+--
+
+_**Collectively, all this data has the potential to create vast opportunities to analyze and make meaningful insights**_
+
+
+- User needs to insert a query in the website every time to obtain information about performance of a player
+
+- Limited ways to save those tables efficiently for comprehensive comparison of two or more players and facilitate statistical thinking in cricket
+
+---
+class: center,middle
+
+#Package Cricketdata 
+
+##Opening door to more data driven stories for men's and women's cricket
+
+---
+# Package - [CricketData](https://github.com/ropenscilabs/cricketdata)
+
+Contains scraper functions for downloading data from ESPNCricinfo into tibbles which can be readily used to analyse the performance of players across different game formats and activities
+
+
+_**fetch_cricinfo**_ : Innings/Career wise summary of the players for all countries (*Existed Before*)
+
+_**find_player_id**_ : Obtain the player id when the user types the name (may be partial) of the player
+
+_**fetch_player**_ : Obtain the performance of a player in different formats like TESTS, ODI or T20 and different activities like batting, fielding and bowling using the player id obtained from *find_player_id*
+
+---
+class: center,middle
+
+# Question: Which women players have scored consecutive centuries in ODI
+
+```{r Conc100,echo=FALSE}
+#First fetch innings level information for your choice of sex, formats and activity
+odibat_F <- fetch_cricinfo("odi", "Women", "Batting",type="innings")
+
+Consecutive_Century_F <- odibat_F%>%arrange(Player, Date, Runs) %>%mutate(new_col=Runs >= 100) %>%group_by(Player,Country)%>%mutate(Run_length = rep(rle(new_col)$lengths,rle(new_col)$lengths), Runvar = rep(rle(new_col)$values,rle(new_col)$lengths))%>%filter(new_col==TRUE)%>%summarize(Con_cent=max(Run_length))%>%filter(Con_cent>=2)%>%select(Player,Country)%>%knitr::kable()
+
+Consecutive_Century_F
+```
+---
+# Question
+
+###How does Average score change with increasing Duck Rate amongst players with similar high scores?
+
+###How high score increases / decreases with increase in Duck Rate amonst players with similar average scores
+
+ - Can this plot be used to identify how players with similar average scores are different from each other in terms of consistent performance
+
+Ducks: Explain
+
+
+---
+```{r Plots,echo=FALSE,,out.width="100%",out.height="100%"}
+odibat_M <- fetch_cricinfo("odi", "Men", "Batting")
+
+ par(mfrow=c(2,2))
+odibat_M %>%mutate(Ducks_Rate=Ducks/Matches)%>%mutate(Matches=case_when(Matches<=50 ~ "Less than 50",
+                                     Matches<=100 ~"Between 50 and 100",
+                                     Matches<=150 ~"Between 100 and 150",
+                                     Matches >150 ~"More than 150", TRUE ~ as.character(Matches)))->odibat_M_1
+
+odibat_M_1 %>% filter(Matches=="Less than 50") %>% ggplot(aes(y = Average, x = Ducks_Rate,col=HighScore,Player=Player,Country=Country)) +
+  geom_point(alpha=0.3,col="blue") + ggtitle("Batsmen playing less than matches") +
+  ylab("Average Score") +xlab("Duck Rate")+theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=22, hjust=0)) +
+  theme(axis.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14)) +
+  theme(axis.text = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+ theme(legend.position = "bottom") -> p
+ 
+
+
+ggplotly(p)
+```
+---
+```{r, Between50and100,echo=FALSE,,out.width="100%",out.height="100%"}  
+odibat_M_1 %>% filter(Matches=="Between 50 and 100") %>% ggplot(aes(y = Average, x = Ducks_Rate,col=HighScore,Player=Player,Country=Country)) +
+  geom_point()+ggtitle("Batsmen playing 50 - 100 matches")+
+  ylab("Average Score") +xlab("Duck Rate")+theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=22, hjust=0)) +
+  theme(axis.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14)) +
+  theme(axis.text = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+ theme(legend.position = "bottom") ->p1
+
+
+ggplotly(p1)
+```
+---
+```{r, Between100and150,echo=FALSE,out.width="100%",out.height="100%"}  
+
+odibat_M_1 %>% filter(Matches=="Between 100 and 150") %>% ggplot(aes(y = HighScore, x = Ducks_Rate,col=Average,Player=Player,Country=Country)) +
+  geom_point()+ ggtitle("Batsmen playing 100 - 150 matches")+
+  ylab("Highest Score") +xlab("Duck Rate")+theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=22, hjust=0)) +
+  theme(axis.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14)) +
+  theme(axis.text = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+ theme(legend.position = "bottom") ->p2
+
+
+ggplotly(p2)
+```
+---
+
+```{r, greater150,echo=FALSE,out.width="100%",out.height="100%"}  
+
+odibat_M_1 %>% filter(Matches=="More than 150") %>% ggplot(aes(y = HighScore, x = Ducks_Rate,col=Average,Player=Player,Country=Country)) +
+  geom_point()+ 
+  ylab("Highest Score") +xlab("Duck Rate")+  ggtitle("Batsmen playing more than 150 matches") + theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=22, hjust=0)) +
+  theme(axis.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14)) +
+  theme(axis.text = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+ theme(legend.text=element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14)) -> p3
+
+
+ggplotly(p3)
+```
+---
+# Question : 
+
+##How top players get dismissed as they are close to a milestone - 
+
+###Vulnerability and Risk Preference
+
+---
+
+```{r Dist_Diss,echo=FALSE,out.width="100%",out.height="100%"}
+
+Player1=find_player_id("ST Jayasuriya")[1:2]
+Player2=find_player_id("AB de Villiers")[1:2]
+Player3=find_player_id("RT Ponting")[1:2]
+Player4=find_player_id("Sachin Tendulkar")[1:2]
+players_odi <- as_tibble(rbind(Player1,Player2,Player3,Player4))# Can put more players
+
+comb_players_odi=NULL
+players= players_odi$ID # put player's code
+format = "odi"  # choose format
+activity = "batting" # Choose activity
+for(i in 1:length(players))
+{
+  g1=fetch_player_data(players[i],format,activity)
+  g1=cbind("player_id"=players[i],g1)
+  comb_players_odi= rbind(comb_players_odi,g1)
+}
+```
+
+```{r Dist_Diss_plot,echo=FALSE,out.width="100%",out.height="100%",fig.width=14,fig.height=11}
+as_tibble(comb_players_odi)%>%mutate(Runs=case_when(Runs<=50 ~ "Less than 50",
+                                                    Runs<=90 ~"Between 50 and 90",
+                                                    Runs<=100 ~"Between 90 and 100",
+                                                    Runs >100 ~"More than 100", TRUE ~ as.character(Runs)))%>% group_by(player_id,Runs, Dismissal)%>%tally()%>%filter(Dismissal!="NA")%>%left_join(players_odi,by=c("player_id"="ID"))%>%filter(Dismissal!="not out" & Dismissal!="retired notout")%>%mutate(Dismissal = case_when(Dismissal=="hit wicket" ~ "others",
+                             Dismissal=="stumped" ~ "others", TRUE~as.character(Dismissal)))-> Dist_dismissal
+
+Dist_dismissal$Runs<-factor(Dist_dismissal$Runs,c("Less than 50","Between 50 and 90","Between 90 and 100","More than 100"))
+
+Dist_dismissal %>% ggplot(aes(x=reorder(Dismissal,n),y=n,fill=Name))+geom_bar(stat = "identity")+ facet_grid(Runs~Name) + xlab("Dismissals") + ylab("Count") + scale_color_brewer(palette = "Dark2")+ ggtitle("Distribution of Dismissals :  ODI Players") +theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14, hjust=0)) +
+  theme(axis.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+
+  theme(axis.text = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=14))+ theme(legend.text=element_text(family = "Trebuchet MS", color="#666666", face="bold", size=12),legend.position = "bottom")+ coord_flip()
+```
+
+---
+
+#Fun Fact #2:
+
+Originally the first game ever to be played in the United States using a bat and ball was cricket
+
+A popular sport in the country between 1834 and 1914 and there were over 1000 cricket clubs across 46 states
+
+---
+
+# Question :
+
+##How top players scores(Runs,X4s,X6s) compare to the average (Boxplot) 
+
+WIP
+---
+
