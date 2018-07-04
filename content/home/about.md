@@ -19,11 +19,21 @@ weight = 5
 # List your qualifications (such as academic degrees).
 [[education.courses]]
   course = "PhD Student, Econometrics and Business Statistics "
-  institution = "Monash University"
-  year = 2018 - 2021
+  institution = "Monash University, Australia"
+  year = "2018 - 2021"
+  
+[[education.courses]]
+  course = "Masters in Statistics (MStat) "
+  institution = "Indian Statistical Institute, India"
+  year = 2013
+  
+[[education.courses]]
+  course = "Bachelor in Science (Statistics Honors) "
+  institution = "St.Xavier's College, India"
+  year = 2011  
 
 +++
 
 # Biography
 
-Sayani Gupta is a PhD student at Econometrics and Business Statistics Department of Monash University. 
+Sayani Gupta is a PhD student at Econometrics and Business Statistics Department of Monash University. Her current research primarily focuses on building visualisation tools for spatially distributed big time series data. She will be looking at Smart Meter electricity usage data in Victoria, Australia. 
