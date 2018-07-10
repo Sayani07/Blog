@@ -90,7 +90,7 @@ class: left,middle
 # Quick Facts
 
 
-- Involves two teams with 11 player's on each side
+- Involves two teams with 11 players on each side
 
 
 - The objective is to score more runs than the opponent
@@ -106,7 +106,7 @@ class: left,middle
 
 ###Played in many formats
 
-- *TEST (1871)* : played over 5 days     
+- *Tests (1871)* : played over 5 days     
 
 - *One Day Internationals - ODI (1971) * :  50 overs per side   
 
@@ -128,7 +128,7 @@ knitr::include_graphics('Figs/Stats2.png')
 
 ---
 
-####Structure of [ESPNcricinfo](http://www.espncricinfo.com/) - One of the few Sophisticated takes on International Cricket Performance
+####Structure of [ESPNcricinfo](http://www.espncricinfo.com/) - One of the few sophisticated takes on international cricket performance
 
 - _**StatsGuru**_ a database of historical matches and players from the 18th century to the present
 
@@ -189,14 +189,15 @@ class: center,middle
 Contains scraper functions for downloading data from ESPNCricinfo into tibbles which can be readily used to analyse the performance of players across different game formats and activities
 
 
-<span style="color:MediumVioletRed">**fetch_cricinfo** </span> 
-To fetch Innings/Career wise summary of the players for all countries (*Existed Before*)
+<span style="color:MediumVioletRed">**fetch_cricinfo** </span>    
+To fetch Innings/Career summaries of the players for all countries  
 
-<span style="color:MediumVioletRed">**find_player_id**</span>
-To fetch player id when the user types the name (may be partial) of the player
 
-<span style="color:MediumVioletRed">**fetch_player_data**</span> 
-To obtain the performance of a player in different formats like TESTS, ODI or T20 and different activities like batting, fielding and bowling using the player id obtained from *find_player_id*
+<span style="color:MediumVioletRed">**find_player_id**</span>  
+To fetch player id when the user types the name (may be partial) of the player  
+
+<span style="color:MediumVioletRed">**fetch_player_data**</span>  
+To obtain the performance of a player in different formats like TESTS, ODI or T20 and different activities like batting, fielding and bowling using the player id obtained from *find_player_id*  
 
 ---
 class: left,left
@@ -220,9 +221,9 @@ WBI %>% arrange(Player, Date, Runs) %>%
 ```
 ---
 
-#How high score increases / decreases with increase in Duck Rate amonst players with similar average scores?
+#How high score increases / decreases with increase in duck rate amongst players with similar average scores?
 
-## Identifying <span style="color:MediumVioletRed">Low Risk - High Reward Batsman</span>
+## Identifying <span style="color:MediumVioletRed">Low Risk - High Reward Batsmen</span>
 
 ---
 ```{r Plots,echo=FALSE,out.width="100%",out.height="100%", cache=TRUE}
@@ -306,7 +307,7 @@ Dist_dismissal %>%filter(Runs!="More than 100")%>%ggplot(aes(x=reorder(Dismissal
 
 class: center,middle
 
-#How top player's Strike Rate and Runs contrast?
+#How top player's strike rate and runs contrast?
 
 ---
 
