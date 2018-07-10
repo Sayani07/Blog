@@ -132,32 +132,41 @@ knitr::include_graphics('Figs/Stats2.png')
 
 - _**StatsGuru**_ a database of historical matches and players from the 18th century to the present
 
+
+
+```{r Espn_Cricinfo0,echo=FALSE, fig.out="100%"}
+knitr::include_graphics('Figs/Step-0_new.png')
+```
+
+
+---
+
 ```{r Espn_Cricinfo1,echo=FALSE, fig.out="100%"}
-knitr::include_graphics('Figs/Step-1.png')
+knitr::include_graphics('Figs/Step-1_new.png')
 ```
 
 ---
 
 ```{r Espn_Cricinfo2,echo=FALSE, fig.out="100%"}
-knitr::include_graphics('Figs/Step-2.png')
+knitr::include_graphics('Figs/Step-2_new.png')
 ```
 
 ---
 
 ```{r Espn_Cricinfo3,echo=FALSE, fig.out="100%"}
-knitr::include_graphics('Figs/Step-3.png')
+knitr::include_graphics('Figs/Step-3_new.png')
 ```
 
 ---
 
 ```{r Espn_Cricinfo4,echo=FALSE, fig.out="100%"}
-knitr::include_graphics('Figs/Step-4.png')
+knitr::include_graphics('Figs/Step-4_new.png')
 ```
 
 ---
 
 ```{r Espn_Cricinfo5,echo=FALSE, fig.out="100%"}
-knitr::include_graphics('Figs/Step-5.png')
+knitr::include_graphics('Figs/Step-5_new.png')
 ```
 
 ---
