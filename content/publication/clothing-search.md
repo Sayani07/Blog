@@ -1,28 +1,19 @@
 +++
-title = "Mobile visual clothing search"
+title = "Day ahead price forecasting models in thin electricity market"
 date = 2013-07-01T00:00:00
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["GA Cushen", "MS Nixon"]
+authors = ["Sayani Gupta", "Puneet Chitkara"]
 
-# Publication type.
-# Legend:
-# 0 = Uncategorized
-# 1 = Conference proceedings
-# 2 = Journal
-# 3 = Work in progress
-# 4 = Technical report
-# 5 = Book
-# 6 = Book chapter
 publication_types = ["1"]
 
 # Publication name and optional abbreviated version.
-publication = "In *International Conference on Multimedia and Expo Workshops (ICMEW)*, IEEE."
-publication_short = "In *ICMEW*"
+publication = "In *Power and Energy Conference at Illinois, 2017*, IEEE."
+publication_short = "In *PECI*"
 
 # Abstract and optional shortened version.
-abstract = "We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone's GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results."
-abstract_short = "A mobile visual clothing search system is presented whereby a smart phone user can either choose a social networking image or capture a new photo of a person wearing clothing of interest and search for similar clothing in a large cloud-based ecommerce database. The phone's GPS location is used to re-rank results by retail store location, to inform the user of local stores where similar clothing items can be tried on."
+abstract = "Day Ahead Electricity Markets (DAMs) in India are thin but growing. Consistent price forecasts are important for their utilization in portfolio optimization models. Univariate or multivariate models with standard exogenous variables such as special day effects etc. are not always useful. Drivers of demand and supply include weather variations over large geographic areas, outages of power system elements and sudden changes in contracts which lead the players to access power exchanges. These needs to be considered in forecasting models. Such models are observed to considerably reduce forecasting errors by outperforming other models under conditions, which are neither infrequent nor recur at defined intervals. This paper develops models for India and tests the utility of these models using Model Confidence Set (MCS) approach which picks up the \"best\" models. The approach has been developed for a power utility in India over a period of two years in live business environment."
+abstract_short = "Day Ahead Electricity Markets (DAMs) in India are thin but growing. Consistent price forecasts are important for their utilization in portfolio optimization models. Univariate or multivariate models with standard exogenous variables such as special day effects etc."
 
 # Featured image thumbnail (optional)
 image_preview = ""
