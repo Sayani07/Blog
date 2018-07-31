@@ -29,11 +29,13 @@ weight = 5
   
 [[education.courses]]
   course = "Bachelor in Science (Statistics Honors) "
-  institution = "St.Xavier's College, India"
+  institution = "St.Xavier's College, Calcutta University,  India"
   year = 2011  
 
 +++
 
-# Biography
+# Hello, folks!
 
-Sayani Gupta is a PhD student at Econometrics and Business Statistics Department of Monash University. Her current research primarily focuses on building visualisation tools for spatially distributed big time series data. She will be looking at Smart Meter electricity usage data in Victoria, Australia. 
+I am doing PhD at the Econometrics and Business Statistics Department of Monash University. Currently, I'm primarily focussing on building statistical and  visualisation tools for analyzing spatially distributed big time series data.
+
+_Be kind, remember you are collaborating with your future self_

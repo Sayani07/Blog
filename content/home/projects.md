@@ -33,11 +33,11 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
-  name = "Deep Learning"
+  name = "Smart Meters Data Visualization"
   tag = ".deep-learning"
 
 [[filter]]
-  name = "Other"
+  name = "Package CricketData"
   tag = ".demo"
 
 +++
