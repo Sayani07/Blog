@@ -32,10 +32,16 @@ weight = 5
   institution = "St.Xavier's College, Calcutta University,  India"
   year = 2011  
 
+
+
 +++
 
-# Hello, folks!
+# About
 
-I am doing PhD at the Econometrics and Business Statistics Department of Monash University. Currently, I'm primarily focussing on building statistical and  visualisation tools for analyzing spatially distributed big time series data.
+Hello, folks! Welcome to my home page. I am doing PhD at the [Econometrics and Business Statistics Department](https://www.monash.edu/business/econometrics-and-business-statistics/) of [Monash University](https://www.monash.edu/). Currently, I'm primarily focussing on building statistical and  visualisation tools for analyzing spatially distributed big time series data.
+
+*Supervisors* :  [Rob J Hyndman](https://robjhyndman.com/),  [Di Cook](http://www.dicook.org/)
 
 _Be kind, remember you are collaborating with your future self_
+
+
