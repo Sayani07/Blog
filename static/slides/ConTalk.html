@@ -3,8 +3,7 @@
   <head>
     <title>Visualisation and analysis of probability distributions of variables defined on spatio-temporal granularities</title>
     <meta charset="utf-8">
-    <meta name="author" content="  Sayani Gupta" />
-    <meta name="date" content="2019-02-28" />
+    <meta name="author" content="  Sayani Gupta     Supervisors:   Prof. Rob J Hyndman     Prof. Dianne Cook     Dr. Peter Toscas" />
     <link href="ConTalk_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="data_viz_theme.css" type="text/css" />
   </head>
@@ -13,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Visualisation and analysis of probability distributions of variables defined on spatio-temporal granularities
-### <br> Sayani Gupta <br>
-### February 28, 2019 <br>
+### <br> Sayani Gupta <br> <br> Supervisors:   Prof. Rob J Hyndman     Prof. Dianne Cook     Dr. Peter Toscas
+### <font size="5"> Department of Econometrics and Business Statistics <br> February 28, 2019
 
 ---
 
@@ -147,16 +146,12 @@ class: middle left
 
 # &lt;span style="color:DarkBlue"&gt; Research objectives
 
-- ### Visualization of probability distributions of deconstructed temporal data
-&lt;br&gt;
-&lt;br&gt;
-- ### Spatio-temporal granularities and probability distribution plots
-&lt;br&gt;
-&lt;br&gt;
-- ### Clustering algorithms for grouping probability distributions on spatio-temporal granularities
-&lt;br&gt;
-&lt;br&gt;
-  
+## 1. Visualization of probability distributions of deconstructed temporal data
+
+## 2. Spatio-temporal granularities and probability distribution plots
+
+## 3. Clustering algorithms for grouping probability distributions on spatio-temporal granularities
+
 
 ---
 class: middle center
@@ -184,65 +179,31 @@ class: middle center
 ]
 
 .pull-right[
-.center[&lt;img src="Linear-Circular.png" height=280px&gt;]
+![](ConTalk_files/figure-html/linear-cyclic-1.png)&lt;!-- --&gt;
+&lt;img src="circular.png" width="50%" /&gt;
 ]
 
- 
 ---
-class: middle left
+class: top center
+
 
 # &lt;span style="color:DarkBlue"&gt; Visualizing distributions across circular granularities (I)
-
-## Data description: 
-**Source** ~  Buildings and Property Division at Monash University  
-&lt;br&gt;
-**Frequency** ~ 30 minutes interval smart meter data of Monash 
-Residential Services  
-&lt;br&gt;
-**Time frame** ~ April 4, 2018 to May 31, 2018  
-&lt;br&gt;
-**Spread** ~ 73 living units (B1 05 and B4 29 chosen for analysis)  
----
-class: top center
-
-# &lt;span style="color:DarkBlue"&gt; Across &lt;span style="color:Crimson"&gt;Day-of-Week
+&lt;font size="3"&gt; **Source** ~ Buildings and Property Division at Monash University  **Frequency** ~ 30 minutes interval smart meter data of Monash Residential Services, &lt;font size="3"&gt; **Time frame** ~ April 4, 2018 to May 31, 2018, &lt;font size="-1"&gt; **Spread** ~ 73 living units
 
 
+.left-column[
+![](ConTalk_files/figure-html/b105-11-1.png)&lt;!-- --&gt;
+]
+--
+.right-column[
 .pull-left[
-![](ConTalk_files/figure-html/b105-1-1.png)&lt;!-- --&gt;
+![](ConTalk_files/figure-html/b429-12-1.png)&lt;!-- --&gt;
 ]
-.pull.right[
-![](ConTalk_files/figure-html/b429-1-1.png)&lt;!-- --&gt;
+.pull-right[
+![](ConTalk_files/figure-html/b429-13-1.png)&lt;!-- --&gt;
 ]
----
-class: top center
-
-##&lt;span style="color:DarkBlue"&gt; Across  &lt;span style="color:Crimson"&gt; Day-of-Week &lt;span style="color:DarkBlue"&gt; and &lt;span style="color:Crimson"&gt; Hour-of-Day 
-
-
-.pull-left[
-![](ConTalk_files/figure-html/b105-2-1.png)&lt;!-- --&gt;
-]
-
-.pull.right[
-![](ConTalk_files/figure-html/b429-2-1.png)&lt;!-- --&gt;
-]
-
-
----
-class: top center
-
-## &lt;span style="color:DarkBlue"&gt;  Across &lt;span style="color:Crimson"&gt;Hour-of-Day &lt;span style="color:DarkBlue"&gt; and &lt;span style="color:Crimson"&gt;Work-Day/Non-Work-Day
-
-
-.pull-left[
-![](ConTalk_files/figure-html/b105-3-1.png)&lt;!-- --&gt;
-]
-.pull.right[
-![](ConTalk_files/figure-html/b429-3-1.png)&lt;!-- --&gt;
 ]
 ---
-
 class: middle left
 
 # &lt;span style="color:DarkBlue"&gt; Interpretations
@@ -304,36 +265,59 @@ Examples:
 class: middle left 
 # &lt;span style="color:DarkBlue"&gt; Interpretations
 
+## Calendar Categorisation
+.pull-left[
+ Categories of `\(C_1\)`: {A, B}  
+ Categories of `\(C_2\)`: {X, Y, Z}  
+ Combinations: {A, X}, {A, Y}, {A, Z}  
+               {B, X}, {B, Y}, {B, Z}
+]
+.pull-right[
+## Missing Combinations of circular granularities
+- Structural (Examples: HoD and HoW)
+- Non-functional (Examples: Working/Non-working day and HoD)
+ ]
+
 ## Why Harmonies work and Clashes don't?
 
 - Nature of circular time granularities and their relationship in terms of mapping to calendars
-&lt;br&gt;
-&lt;br&gt;
+
 ## Need to formalize the theory of granularities to study their properties
 
 ---
-# &lt;span style="color:DarkBlue"&gt; Linear Time Granularities 
+
+.pull-left[
+# &lt;span style="color:DarkBlue"&gt; Linear Time Granularities &lt;br&gt;
 
 _* "A Glossary of Time Granularity Concepts"* by Bettini et al. _
+&lt;br&gt;
+&lt;br&gt;
 
-### Definition: Time Domain
+&lt;img src="linear-time-2.png" width="100%" height="290" /&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;span style="color:Crimson"&gt;  These definitions for linear granularities are inadequate for conceptualizing circular granularities since the linearity imposes a restriction on reflecting periodicity in time
+
+]
+.pull-right[### Definition: Time Domain
 A **time domain** is a pair `\((T; \le)\)` where `\(T\)` is a non-empty set of time instants and `\(\le\)` is a total order on `\(T\)`.
 
 ### Definition: Linear Granularity
 A linear **granularity** is a mapping `\(G\)` from the integers to subsets of the time domain such that:
 
   (C1) if `\(i &lt; j\)` and `\(G(i)\)` and `\(G(j)\)` are non-empty, then each element of `\(G(i)\)` is less than all elements of `\(G(j)\)`, and  
+  &lt;br&gt;
   (C2) if `\(i &lt; k &lt; j\)` and `\(G(i)\)` and `\(G(j)\)` are non-empty, then `\(G(k)\)` is non-empty.  
 &lt;br&gt;
 &lt;br&gt;
 The first condition implies that the granules in a linear granularity are non-overlapping and their index order is same as time order
 &lt;br&gt;
 &lt;br&gt;
-&lt;span style="color:Crimson"&gt;  These definitions for linear granularities are inadequate for conceptualizing circular granularities since the linearity imposes a restriction on reflecting periodicity in time
+]
 
 ---
 
-## &lt;span style="color:DarkBlue"&gt; Circular Time Granularities
+# &lt;span style="color:DarkBlue"&gt; Circular Time Granularities
 
 .pull-left[
 ## Idea
@@ -356,25 +340,24 @@ A **circular granularity** `\(C\)` with a modular period m is defined to be a ma
 &lt;br&gt;
 ###  &lt;span style="color: #1B9E77"&gt; Illustrative calendar categorisations
 &lt;img src="modarith-table.png" width="90%" /&gt;
-&lt;font size="-1"&gt; `\(n_i\)` is the number of categories created by `\(C_i\)`  
-time index ~ hourly 
+&lt;font size="-1"&gt; `\(n_i\)` is the number of categories created by `\(C_i\)`, &amp;nbsp; time index ~ hourly 
 ]
 
 ---
 
-### &lt;span style="color:DarkBlue"&gt; Guiding rules to control for Clashes (I)
+## &lt;span style="color:DarkBlue"&gt; Guiding rules to control for Clashes (I)
 .pull-left[
 #### &lt;span style="color: #1B9E77"&gt; Structurally Empty Combinations (Examples: HoD and HoW)
 
 &lt;span style="color: Crimson"&gt; **Rule 1** 
 
-For two circular granularities `\(C_1\)` and `\(C_2\)` of the form `\(C_1 = (s \mod m_1)\)` and `\(C_2 = (s \mod m_2)\)`,  
-&lt;br&gt;
+For two circular granularities `\(C_1\)` and `\(C_2\)` of the form `\(C_1 = (s \mod m_1)\)` and `\(C_2 = (s \mod m_2)\)` ----&gt;
+
 Choosing `\(m_1, m_2 &gt;1\)` such that `\(HCF(m_2, m_1) &gt; 1\)` will lead to structurally empty combinations for `\(s &gt; m_1m_2\)`  
 
 &lt;span style="color: Crimson"&gt; **Rule 2**
 
-For two circular granularities `\(C_3 = (\lfloor s/a\rfloor   \mod m_1)\)` and `\(C_4 = (\lfloor s/b\rfloor \mod m_2)\)` and `\(s &gt; m_1m_2\)`,
+For two circular granularities `\(C_3 = (\lfloor s/a\rfloor   \mod m_1)\)` and `\(C_4 = (\lfloor s/b\rfloor \mod m_2)\)` and `\(s &gt; m_1m_2\)` ----&gt;
 
 Choosing `\(a, b, m_1, m_2 &gt; 1\)` with `\(am_1,bm_2\)` being a perfect multiple of the other one will yield empty combinations provided  `\(am_1 \neq b\)` or `\(bm_2 \neq a\)`.
 
@@ -382,160 +365,154 @@ Choosing `\(a, b, m_1, m_2 &gt; 1\)` with `\(am_1,bm_2\)` being a perfect multip
 ]
 .pull-right[
 ## Explanation of Rule 1
-&lt;img src="Rule1.png" width="100%" /&gt;
+&lt;img src="Rule1-improved.png" width="100%" /&gt;
 
-#### HoD `\(= s \mod 24\)` ---&gt;  `\(m_1 = 24\)`  
-#### HoW `\(= s \mod 168\)` ---&gt;  `\(m_2= 24*7\)`  
-#### `\(HCF(m_2, m_1) &gt;  1\)`  
+### HoD `\(= s \mod 24\)` ---&gt;  `\(m_1 = 24\)`  
+### HoW `\(= s \mod 168\)` ---&gt;  `\(m_2= 24*7\)`  
+### `\(HCF(m_2, m_1) = 24 &gt;  1\)`  
 ### &lt;font size="+2"&gt; &lt;span style="color: Crimson"&gt; (HoD, HoW) ---&gt; Clash
 
 ]
 
 ---
 
-## &lt;span style="color:DarkBlue"&gt; Guiding rules to control for Clashes (II)
+# &lt;span style="color:DarkBlue"&gt; Guiding rules to control for Clashes (II)
 
-### &lt;span style="color: #1B9E77"&gt;  Non-functional Empty Combinations (Examples: Working/Non-working day and HoD)
-
-For two circular granularities `\(C_1\)` and `\(C_2\)` with modular period `\(m_1\)` and `\(m_2\)`, 
-
-choosing `\(m_1, m_2 &gt;1\)`, such that  `\(m_1m_2 &lt; T/k\)` will lead to non-functional Empty combinations, where k&gt;30 (approx) for density estimates and T is the number of observations for given time index.
-
-#### WIP (Finding comprehensive list of rules that objectively guide us to choose Harmonies)
-
----
-
-
-
+## Brief explanation of Rule 2
 .pull-left[
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-
-# &lt;span style="color:DarkBlue"&gt;Timeline
+.center[
+&lt;img src="Rule2-ex.png" width="60%" /&gt;
+&lt;img src="Rule2-miss.png" width="50%" /&gt;
 ]
-.pull-right[
-.center-left[
-&lt;table width="100%"&gt; 
+]
+.pull-right[## &lt;span style="color: #1B9E77"&gt;  Non-functional Empty Combinations (Examples: Working/Non-working day and HoD)
+
+For two circular granularities `\(C_1\)` and `\(C_2\)` with modular period `\(m_1\)` and `\(m_2\)` ----&gt;
+
+Choosing `\(m_1, m_2 &gt;1\)`, such that  `\(m_1m_2 &lt; T/k\)` will lead to non-functional Empty combinations, where k&gt;30 (approx) for density estimates and T is the number of observations for given time index.
+
+### WIP (Finding comprehensive list of rules that objectively guide us to choose Harmonies)
+]
+---
+.left-column[
+.center[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+#&lt;span style="color:DarkBlue"&gt;Timeline
+]
+]
+.right-column[
+&lt;table width="120%"&gt; 
 &lt;style type="text/css"&gt;
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-wavx{background-color:#ffffff;font-size:14px;font-family:"Comic Sans MS", cursive, sans-serif !important;;border-color:inherit;text-align:left}
 .tg .tg-ajri{font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;color:#333333;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-giyz{background-color:#ffffff;font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-253e{font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-gva0{font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;color:#009901;border-color:inherit;text-align:left}
-.tg .tg-u1mr{font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;border-color:inherit;text-align:left}
-.tg .tg-93vd{font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;color:#333333;border-color:inherit;text-align:right;vertical-align:top}
+.tg .tg-v746{background-color:#ffffff;font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;color:#333333;border-color:inherit;text-align:right;vertical-align:top}
+.tg .tg-an6u{font-weight:bold;font-size:14px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;color:#009901;border-color:inherit;text-align:left}
+.tg .tg-q7c4{font-size:14px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;border-color:inherit;text-align:left}
+.tg .tg-oqet{font-size:14px;font-family:"Comic Sans MS", cursive, sans-serif !important;;background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-v3iu{background-color:#ffffff;font-size:14px;font-family:"Comic Sans MS", cursive, sans-serif !important;;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-cjxt{background-color:#ffffff;font-size:13px;font-family:"Comic Sans MS", cursive, sans-serif !important;;color:#333333;border-color:inherit;text-align:left;vertical-align:top}
 &lt;/style&gt;
 &lt;table class="tg"&gt;
   &lt;tr&gt;
-    &lt;th class="tg-gva0"&gt;Year&lt;/th&gt;
-    &lt;th class="tg-gva0"&gt;Period&lt;/th&gt;
-    &lt;th class="tg-gva0"&gt;Description&lt;/th&gt;
-    &lt;th class="tg-gva0"&gt;Product&lt;/th&gt;
+    &lt;th class="tg-an6u"&gt;Year&lt;/th&gt;
+    &lt;th class="tg-an6u"&gt;Period&lt;/th&gt;
+    &lt;th class="tg-an6u"&gt;Description&lt;/th&gt;
+    &lt;th class="tg-an6u"&gt;Product&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-u1mr"&gt;2019&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;February&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;Candidature Confirmation&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;Milestone&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;2019&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;February&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;Candidature Confirmation&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;Milestone&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-u1mr"&gt;&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;April&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;Research Aim-1&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;Paper&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;May&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;Research Aim-1&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;R Package&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-u1mr"&gt;&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;May&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;Research Aim-1&lt;/td&gt;
-    &lt;td class="tg-u1mr"&gt;R Package&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;June&lt;/td&gt;
+    &lt;td class="tg-q7c4"&gt;Research Aim-1&lt;/td&gt;
+    &lt;td class="tg-wavx"&gt;Paper&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;June&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;geom_hdr&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;R Package&lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;June - July&lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;Internship (Tentative)&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;Internship&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;June - July&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Internship (Tentative)&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Internship&lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;December&lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;Research Aim - 2&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;Draft Paper&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;December&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Research Aim-2&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Draft Paper&lt;/td&gt;
+    &lt;td class="tg-oqet" rowspan="6"&gt;2020&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;February&lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;Mid-Candidature Review&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;Milestone&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;2020&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;February&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Mid-Candidature Review&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Milestone&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;April &lt;/td&gt;
+    &lt;td class="tg-oqet"&gt;Research Aim - 2&lt;/td&gt;
+    &lt;td class="tg-v3iu"&gt;R Package&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;April &lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;May&lt;/td&gt;
     &lt;td class="tg-253e"&gt;Research Aim - 2&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Paper&lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;Paper&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;May&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Research Aim - 2&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;R Package&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;June&lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;June&lt;/td&gt;
     &lt;td class="tg-253e"&gt;Research Internship&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Internship&lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;Internship&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-253e"&gt;&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;July&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;IASC isi 2020&lt;/td&gt;
-    &lt;td class="tg-253e"&gt;Conference&lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;July&lt;/td&gt;
+    &lt;td class="tg-253e"&gt;Compstat 2020&lt;br&gt;&lt;/td&gt;
+    &lt;td class="tg-giyz"&gt;Conference&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-ajri"&gt;&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;December&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;December&lt;/td&gt;
     &lt;td class="tg-ajri"&gt;Research Aim-3&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;Draft Paper&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;Draft Paper&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-ajri"&gt;2021&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;February&lt;/td&gt;
+    &lt;td class="tg-ajri" rowspan="4"&gt;2021&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;February&lt;/td&gt;
     &lt;td class="tg-ajri"&gt;Pre-submission Review&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;Milestone&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;Milestone&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-ajri"&gt;&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;March&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;March&lt;/td&gt;
     &lt;td class="tg-ajri"&gt;Research Aim - 3&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;Paper&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;R Package&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-ajri"&gt;&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;April&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;April&lt;/td&gt;
     &lt;td class="tg-ajri"&gt;Research Aim - 3&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;R Package&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;Paper&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td class="tg-ajri"&gt;&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;May&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;May&lt;/td&gt;
     &lt;td class="tg-ajri"&gt;Thesis Submission&lt;/td&gt;
-    &lt;td class="tg-ajri"&gt;Milestone&lt;/td&gt;
+    &lt;td class="tg-cjxt"&gt;Milestone&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
-]
 ]
 
 ---
