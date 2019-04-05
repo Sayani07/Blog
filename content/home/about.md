@@ -40,6 +40,10 @@ weight = 1
 
 Hello, folks! Welcome to my home page. I am doing PhD at the [Econometrics and Business Statistics Department](https://www.monash.edu/business/econometrics-and-business-statistics/) of [Monash University](https://www.monash.edu/) under the supervision of [Rob J Hyndman](https://robjhyndman.com/) and [Di Cook](http://www.dicook.org/). My dissertation focuses on building visualisation and statistical tools for analyzing spatially distributed big time series data.
 
+I'm passionate about putting to use statistics to solve real world problems and I almost always use R to do that. You can find some of my projects [here](https://sayani.netlify.com/#projects).
+
+Apart from my research, I like music and spend my time learning some Indian classical music. Visit me on [twitter](https://twitter.com/pridiltal), I post mostly about R, Statistics, Data Science and science in nature. 
+
 
 
 
