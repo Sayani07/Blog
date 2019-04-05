@@ -29,7 +29,7 @@ weight = 1
   
 [[education.courses]]
   course = "Bachelor in Science (Statistics Honors) "
-  institution = "St.Xavier's College, Calcutta University,  India"
+  institution = "St.Xavier's College, Calcutta University, India"
   year = 2011  
 
 
@@ -42,10 +42,7 @@ Hello, folks! Welcome to my home page. I am doing PhD at the [Econometrics and B
 
 I'm passionate about putting to use statistics to solve real world problems and I almost always use R to do that. You can find some of my projects [here](https://sayani.netlify.com/#projects).
 
-Apart from my research, I like music and spend my time learning some Indian classical music. Visit me on [twitter](https://twitter.com/pridiltal), I post mostly about R, Statistics, Data Science and science in nature. 
-
-
-
+Apart from my research, I spend my time learning Indian classical music and also travelling in and around Melbourne.
 
 _Be kind, remember you are collaborating with your future self_
 
