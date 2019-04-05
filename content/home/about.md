@@ -5,14 +5,14 @@ active = true
 date = 2016-04-20T00:00:00
 
 # Order that this section will appear in.
-weight = 5
+weight = 1
 
 # List your academic interests.
 [interests]
   interests = [
+    "Visualisation",
     "Time Series Analysis",
-    "Forecasting",
-    "Spatial Econometrics",
+    "Computational Statistics",
     "Data Analysis"
   ]
 
@@ -38,9 +38,10 @@ weight = 5
 
 # About
 
-Hello, folks! Welcome to my home page. I am doing PhD at the [Econometrics and Business Statistics Department](https://www.monash.edu/business/econometrics-and-business-statistics/) of [Monash University](https://www.monash.edu/). Currently, I'm primarily focussing on building statistical and  visualisation tools for analyzing spatially distributed big time series data.
+Hello, folks! Welcome to my home page. I am doing PhD at the [Econometrics and Business Statistics Department](https://www.monash.edu/business/econometrics-and-business-statistics/) of [Monash University](https://www.monash.edu/) under the supervision of [Rob J Hyndman](https://robjhyndman.com/) and [Di Cook](http://www.dicook.org/). My dissertation focuses on building visualisation and statistical tools for analyzing spatially distributed big time series data.
 
-*Supervisors* :  [Rob J Hyndman](https://robjhyndman.com/),  [Di Cook](http://www.dicook.org/)
+
+
 
 _Be kind, remember you are collaborating with your future self_
 
